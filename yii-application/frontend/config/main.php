@@ -47,6 +47,8 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'profile/<nickname:\w+>' => 'user/profile/view',
+                //'profile/generate' => 'user/profile/generate'
             ],
         ],
         /*'mailer' => [
