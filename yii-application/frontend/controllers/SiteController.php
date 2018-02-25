@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 
 use frontend\models\SearchForm;
+use frontend\models\User;
 use yii\web\Controller;
 
 /**
@@ -48,12 +49,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $string = "Hello world, it is the magic time for coding!";
+       $users = User::find()->all();
 
-        //echo Yii::$app->stringHelper->getShortText($string);die;
-        //echo Yii::$app->stringHelper->getShortWordText($string, 29);die;
-        //echo Yii::$app->stringHelper->getShortSpaceText($string, 2);die;
-        return $this->render('index');
+        return $this->render('index',[
+            'users' => $users,
+        ]);
     }
 
     
