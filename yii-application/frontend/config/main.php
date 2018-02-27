@@ -18,6 +18,9 @@ return [
         ],
     ],
     'components' => [
+        'storage' => [
+            'class' => 'frontend\components\Storage',
+        ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
