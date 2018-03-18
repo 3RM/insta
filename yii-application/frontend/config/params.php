@@ -6,4 +6,10 @@ return [
     'storagePath' => '@frontend/web/uploads/',
     'storageUri' => '/uploads/',
 
+    // Настройки могут быть вложенными
+    'postPicture' => [
+        'maxWidth' => 800,
+        'maxHeight' => 600,
+    ],
+
 ];

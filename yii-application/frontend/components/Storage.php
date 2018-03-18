@@ -27,6 +27,15 @@ class Storage extends Component implements StorageInterface
         $path = $this->preparePath($file); 
 
         if ($path && $file->saveAs($path)) {
+
+            /*$width = Yii::$app->params['postPicture']['maxWidth'];
+            $height = Yii::$app->params['postPicture']['maxHeight'];
+
+            $imag = Yii::$app->image->load($path);
+            $imag->resize($width, $height, Yii\image\drivers\Image::ADAPT)
+            ->background('#fff')
+            ->save($path, 85);*/
+
             return $this->fileName;
         }
     }
@@ -62,6 +71,7 @@ class Storage extends Component implements StorageInterface
         
         $name = substr_replace($hash, '/', 2, 0);
         $name = substr_replace($name, '/', 5, 0);  // 0c/a9/277f91e40054767f69afeb0426711ca0fddd
+        $name = $name."_".time(); //добавляем временую метку
         return $name . '.' . $file->extension;  // 0c/a9/277f91e40054767f69afeb0426711ca0fddd.jpg
     }
 

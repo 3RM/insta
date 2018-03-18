@@ -4,12 +4,27 @@ use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
 use dosamigos\fileupload\FileUpload;
 
+//use yii\imagine\Image;
+//use Imagine\Gd;
+//use Imagine\Image\Box;
+//use Imagine\Image\BoxInterface;
+
+use Intervention\Image\ImageManager;
+ 
+
+/*$manager = new ImageManager(array('driver' => 'imagick'));
+
+// to finally create image instances
+$image = $manager->make('/uploads/'.$user->picture)->resize(300, 200);*/
+
 ?>
+
+<img src="<?php //echo Image::getImagine()->open($user->getPicture())->thumbnail(new Box('200', '200')); ?>" alt="">
 
 <h3><?= Html::encode($user->username); ?></h3>
 <h3><?= HtmlPurifier::process($user->about); ?></h3>
 
-<img src="<?= $user->getPicture(); ?>" id="profile-picture" alt="">
+<img src="<?= $user->getPicture(); ?>" id="profile-picture" style="width: 200px; height: auto;" alt="">
 <?php if($currentUser): ?>
 <?php if($currentUser->equals($user)): ?>
 <div class="alert alert-success display-none" id="profile-image-success">Profile image updated</div>

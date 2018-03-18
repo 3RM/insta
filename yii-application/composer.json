@@ -22,7 +22,8 @@
         "yiisoft/yii2-redis": "^2.0",
         "2amigos/yii2-file-upload-widget": "~1.0",
         "intervention/image": "^2.4",
-        "yiisoft/yii2-imagine": "^2.1"
+        "yiisoft/yii2-imagine": "^2.1",
+        "yurkinx/yii2-image": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
